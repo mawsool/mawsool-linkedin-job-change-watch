@@ -1,0 +1,121 @@
+{
+  "actorSpecification": 1,
+  "title": "LinkedIn URL results",
+  "description": "Raw JSON keeps every source field. Flat view shows export-friendly columns.",
+  "fields": {
+    "type": "object",
+    "properties": {
+      "inputUrl": {
+        "type": "string",
+        "title": "LinkedIn URL"
+      },
+      "linkedinNumId": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "LinkedIn numeric ID"
+      },
+      "fullName": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Full name"
+      },
+      "previousCompany": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Previous company"
+      },
+      "currentCompany": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Current company"
+      },
+      "previousHeadline": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Previous headline"
+      },
+      "currentHeadline": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Current headline"
+      },
+      "needsUpdate": {
+        "type": "boolean",
+        "title": "Needs update"
+      },
+      "changeType": {
+        "type": "string",
+        "title": "Change type"
+      },
+      "success": {
+        "type": "boolean",
+        "title": "Success"
+      },
+      "error": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Error"
+      },
+      "checkedAt": {
+        "type": "string",
+        "title": "Checked at"
+      }
+    }
+  },
+  "views": {
+    "flat": {
+      "title": "Flat results",
+      "transformation": {
+        "fields": [
+          "inputUrl",
+          "linkedinNumId",
+          "fullName",
+          "previousCompany",
+          "currentCompany",
+          "previousHeadline",
+          "currentHeadline",
+          "needsUpdate",
+          "changeType",
+          "success",
+          "error",
+          "checkedAt"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "inputUrl": {
+            "label": "LinkedIn URL",
+            "format": "link"
+          },
+          "success": {
+            "label": "Success",
+            "format": "boolean"
+          },
+          "needsUpdate": {
+            "label": "Needs update",
+            "format": "boolean"
+          },
+          "checkedAt": {
+            "label": "Checked at",
+            "format": "date"
+          }
+        }
+      }
+    }
+  }
+}

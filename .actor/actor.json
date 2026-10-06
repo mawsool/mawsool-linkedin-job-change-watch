@@ -1,0 +1,38 @@
+{
+  "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+  "actorSpecification": 1,
+  "name": "mawsool-linkedin-job-change-watch",
+  "title": "LinkedIn Job Change Detector & Alerts",
+  "description": "Monitor LinkedIn URL lists for company and headline changes. Schedule daily, weekly or monthly checks and send changed-profile verdicts to your webhook.",
+  "seoTitle": "LinkedIn Job Change Detector & Alerts",
+  "seoDescription": "Monitor LinkedIn profiles for employer and headline changes. Schedule recurring checks and send changed-profile alerts to your webhook.",
+  "categories": [
+    "LEAD_GENERATION",
+    "SOCIAL_MEDIA"
+  ],
+  "version": "1.0",
+  "buildTag": "latest",
+  "minMemoryMbytes": 256,
+  "maxMemoryMbytes": 1024,
+  "defaultRunOptions": {
+    "build": "latest",
+    "timeoutSecs": 21600,
+    "memoryMbytes": 256
+  },
+  "environmentVariables": {
+    "ACTOR_MODE": "watch",
+    "CHARGE_EVENT": "job-check",
+    "GUEST_API_KEY": "@mawsoolGuestApiKey"
+  },
+  "meta": {
+    "templateId": "ts-empty",
+    "generatedBy": "Cursor Agent"
+  },
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "pricing": "./pay_per_event.json",
+  "dockerfile": "../Dockerfile"
+}

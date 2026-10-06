@@ -1,0 +1,30 @@
+{
+  "actorSpecification": 1,
+  "events": {
+    "job-check": {
+      "title": "LinkedIn URL check",
+      "description": "One LinkedIn profile URL processed and written to the result dataset.",
+      "isPrimaryEvent": true,
+      "eventTieredPricingUsd": {
+        "FREE": {
+          "tieredEventPriceUsd": 0.0006
+        },
+        "BRONZE": {
+          "tieredEventPriceUsd": 0.00055
+        },
+        "SILVER": {
+          "tieredEventPriceUsd": 0.0005
+        },
+        "GOLD": {
+          "tieredEventPriceUsd": 0.0004
+        },
+        "PLATINUM": {
+          "tieredEventPriceUsd": 0.00035
+        },
+        "DIAMOND": {
+          "tieredEventPriceUsd": 0.0003
+        }
+      }
+    }
+  }
+}

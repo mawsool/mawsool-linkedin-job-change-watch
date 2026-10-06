@@ -1,0 +1,69 @@
+{
+  "title": "Watch LinkedIn profiles for job changes",
+  "type": "object",
+  "schemaVersion": 1,
+  "description": "Add URLs directly, paste CSV, or upload a CSV file.",
+  "properties": {
+    "urls": {
+      "title": "LinkedIn profile URLs",
+      "type": "array",
+      "description": "Add linkedin.com/in/... profile URLs.",
+      "editor": "stringList",
+      "prefill": [
+        "https://www.linkedin.com/in/osama-abdelhadi/"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "urlsCsv": {
+      "title": "Or paste CSV",
+      "type": "string",
+      "description": "Header: url. Current Company Checker also accepts previousCompany.",
+      "editor": "textarea",
+      "prefill": "url\nhttps://www.linkedin.com/in/osama-abdelhadi/"
+    },
+    "fileUrl": {
+      "title": "Or upload a CSV file",
+      "type": "string",
+      "description": "CSV with a url or linkedinUrl column.",
+      "editor": "fileupload"
+    },
+    "maxUrls": {
+      "title": "Maximum URLs",
+      "type": "integer",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 100000,
+      "description": "Cost-control cap. Maximum 100,000. A run that stops continues on the next schedule."
+    },
+    "concurrency": {
+      "title": "Concurrent requests",
+      "type": "integer",
+            "description": "How many watched profile URLs to check at the same time.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 40
+    },
+    "watchId": {
+      "title": "Watch list ID",
+      "type": "string",
+            "editor": "textfield",
+      "default": "default",
+      "description": "Stable ID for this list. Reuse it on every scheduled run."
+    },
+    "stateStoreName": {
+      "title": "State store name",
+      "type": "string",
+            "editor": "textfield",
+      "default": "mawsool-linkedin-job-watch",
+      "description": "Named persistent key-value store holding the previous snapshot."
+    },
+    "webhookUrl": {
+      "title": "Change webhook URL (optional)",
+      "type": "string",
+      "description": "HTTPS endpoint receiving changed rows only. The baseline run sends no webhook.",
+      "editor": "textfield"
+    }
+  }
+}
